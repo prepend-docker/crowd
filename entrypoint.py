@@ -15,4 +15,4 @@ gen_cfg('server.xml.j2', f'{CROWD_INSTALL_DIR}/apache-tomcat/conf/server.xml')
 # gen_cfg('cluster.properties.j2', f'{CROWD_HOME}/cluster.properties',
 #         user=RUN_USER, group=RUN_GROUP, overwrite=False)
 
-start_app(f'{CROWD_INSTALL_DIR}/start_crowd.sh -fg', CROWD_HOME, name='Crowd')
+start_app(f'{CROWD_INSTALL_DIR}/start_crowd.sh -fg', CROWD_HOME, name='crowd')
