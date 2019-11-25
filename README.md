@@ -15,7 +15,7 @@ For the `CROWD_HOME` directory that is used to store application data (amongst o
 To get started you can use a data volume, or named volumes. In this example we'll use named volumes.
 
     docker volume create --name crowdVolume
-    docker run -v crowdVolume:/var/atlassian/application-data/crowd --name="crowd" -d -p 8095:8095 dchevell/crowd
+    docker run -v crowdVolume:/var/atlassian/application-data/crowd --name="crowd" -d -p 8095:8095 prepend2/crowd
 
 
 **Success**. Crowd is now available on [http://localhost:8095](http://localhost:8095)*
@@ -67,7 +67,7 @@ If you need to pass additional JVM arguments to Crowd, such as specifying a cust
 
 Example:
 
-    docker run -e JVM_SUPPORT_RECOMMENDED_ARGS=-Djavax.net.ssl.trustStore=/var/atlassian/application-data/crowd/cacerts -v crowdVolume:/var/atlassian/application-data/crowd --name="crowd" -d -p 8095:8095 dchevell/crowd
+    docker run -e JVM_SUPPORT_RECOMMENDED_ARGS=-Djavax.net.ssl.trustStore=/var/atlassian/application-data/crowd/cacerts -v crowdVolume:/var/atlassian/application-data/crowd --name="crowd" -d -p 8095:8095 prepend2/crowd
 
 ## Container Configuration
 
@@ -98,15 +98,14 @@ Read more about data recovery and backups: [https://confluence.atlassian.com/cro
 
 # Versioning
 
-The `latest` tag matches the most recent release of Atlassian Crowd. Thus `dchevell/crowd:latest` will use the newest version of Crowd available.
+The `latest` tag matches the most recent release of Atlassian Crowd. Thus `prepend2/crowd:latest` will use the newest version of Crowd available.
 
 Alternatively you can use a specific major, major.minor, or major.minor.patch version of Crowd by using a version number tag:
 
-* `dchevell/crowd:3`
-* `dchevell/crowd:3.2`
-* `dchevell/crowd:3.2.3`
+* `prepend2/crowd:3`
+* `prepend2/crowd:3.7`
+* `prepend2/crowd:3.7.0`
 
-All versions from 2.2.2+ are available
 
 # Troubleshooting
 
