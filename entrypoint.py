@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-#from entrypoint_helpers import env, gen_cfg, gen_container_id, start_app
+from entrypoint_helpers import env, gen_cfg, gen_container_id, start_app
 
 
 RUN_USER = env['run_user']
@@ -16,4 +16,3 @@ gen_cfg('server.xml.j2', f'{CROWD_INSTALL_DIR}/apache-tomcat/conf/server.xml')
 #         user=RUN_USER, group=RUN_GROUP, overwrite=False)
 
 start_app(f'{CROWD_INSTALL_DIR}/start_crowd.sh -fg', CROWD_HOME, name='Crowd')
-
