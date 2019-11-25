@@ -14,7 +14,7 @@ WORKDIR $CROWD_HOME
 # Expose HTTP port
 EXPOSE 8095
 
-CMD ["/entrypoint.py"]
+CMD ["/entrypoint.py", "-fg"]
 ENTRYPOINT ["/tini", "--"]
 
 RUN apt-get update \
